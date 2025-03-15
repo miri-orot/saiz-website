@@ -33,7 +33,7 @@
             max-width: 850px;
             margin: 0 auto;
             padding: 0 20px 40px;
-            margin-top: 180px; /* 여백 더 크게 증가 */
+            margin-top: 180px; /* 헤더 높이 + 여유 공간 */
         }
         
         header {
@@ -143,6 +143,49 @@
             margin-bottom: 0;
         }
         
+        /* 스케줄 박스 스타일 */
+        .schedule-box {
+            background-color: #f5f5f5; /* 밝은 그레이 배경 */
+            color: #333;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-item {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        
+        .schedule-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .schedule-time {
+            flex: 0 0 100px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .schedule-content {
+            flex: 1;
+        }
+        
+        .schedule-content p {
+            margin: 5px 0;
+            color: #444; /* 조금 더 어두운 색상으로 조정 */
+        }
+        
+        .schedule-content strong {
+            color: #222; /* 더 어두운 색상으로 조정 */
+            font-size: 1.1rem;
+        }
+        
         /* 데스크톱용 테이블 스타일 */
         .membership-table-wrapper {
             overflow-x: auto;
@@ -231,48 +274,6 @@
             left: 0;
         }
         
-        .schedule-box {
-            background-color: #f5f5f5; /* 밝은 그레이 배경 */
-            color: #333;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .schedule-item {
-            display: flex;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 15px;
-        }
-        
-        .schedule-item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        
-        .schedule-time {
-            flex: 0 0 100px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .schedule-content {
-            flex: 1;
-        }
-        
-        .schedule-content p {
-            margin: 5px 0;
-            color: #444; /* 조금 더 어두운 색상으로 조정 */
-        }
-        
-        .schedule-content strong {
-            color: #222; /* 더 어두운 색상으로 조정 */
-            font-size: 1.1rem;
-        }
-        
         .cta-button {
             display: block;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -337,30 +338,8 @@
                 font-size: 1.2rem;
             }
             
-            .container {
-                padding: 0 15px 30px;
-            }
-            
-            .header-content, .footer-content {
-                padding: 0 15px;
-            }
-            
-            .card {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-            
-            .alert-banner {
-                padding: 15px 20px;
-                margin: 20px auto;
-            }
-            
             header {
                 padding: 20px 0;
-            }
-            
-            .container {
-                margin-top: 100px; /* 모바일에서 헤더 높이 + 여유 공간 조정 */
             }
             
             header h1 {
@@ -372,7 +351,26 @@
                 font-size: 1.1rem;
             }
             
-            /* 모바일 환경에서 테이블 숨기고 카드 표시 */
+            .container {
+                margin-top: 300px; /* 모바일에서 여백 대폭 증가 - 200px에서 300px로 늘림 */
+                padding: 0 15px 30px;
+            }
+            
+            /* 스케줄 박스 모바일 스타일 */
+            .schedule-item {
+                flex-direction: column;
+            }
+            
+            .schedule-time {
+                margin-bottom: 8px;
+                font-size: 1.1rem;
+            }
+            
+            .schedule-content p {
+                margin: 8px 0;
+            }
+            
+            /* 모바일에서 테이블 숨기고 카드 표시 */
             .membership-table-wrapper {
                 display: none;
             }
@@ -381,22 +379,15 @@
                 display: block;
             }
             
-            /* 타임라인 수정 */
-            .timeline-date {
-                margin-bottom: 8px;
+            /* 카드 패딩 조정 */
+            .card {
+                padding: 20px;
+                margin-bottom: 20px;
             }
             
-            .timeline-time {
-                width: 80px;
-                font-size: 0.9rem;
-            }
-            
-            .timeline-content {
-                padding-left: 15px;
-            }
-            
-            .timeline-content-item {
-                margin-bottom: 8px;
+            .alert-banner {
+                padding: 15px 20px;
+                margin: 20px auto;
             }
         }
     </style>
