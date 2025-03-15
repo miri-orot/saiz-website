@@ -356,18 +356,33 @@
                 padding: 0 15px 30px;
             }
             
+            /* 일정 제목 수정 - 줄바꿈 추가 */
+            .card h2.schedule-title {
+                line-height: 1.4;
+            }
+            
             /* 스케줄 박스 모바일 스타일 */
+            .schedule-box {
+                padding: 20px 15px;
+            }
+            
             .schedule-item {
                 flex-direction: column;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
             }
             
             .schedule-time {
-                margin-bottom: 8px;
+                margin-bottom: 5px;
                 font-size: 1.1rem;
             }
             
+            .schedule-content {
+                padding-left: 0;
+            }
+            
             .schedule-content p {
-                margin: 8px 0;
+                margin: 5px 0;
             }
             
             /* 모바일에서 테이블 숨기고 카드 표시 */
@@ -491,7 +506,7 @@
         </div>
         
         <div class="card">
-            <h2>가입 신청 & 결제 일정   |   3월 31일 월요일</h2>
+            <h2 class="schedule-title">가입 신청 & 결제 일정<br>3월 31일 월요일</h2>
             
             <div class="schedule-box">
                 <div class="schedule-item">
