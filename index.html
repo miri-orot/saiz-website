@@ -219,7 +219,7 @@
         }
         
         .cta-button {
-            display: inline-block;
+            display: block;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             padding: 15px 40px;
@@ -227,10 +227,12 @@
             font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
-            margin: 30px 0;
+            margin: 30px auto;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(74, 107, 223, 0.3);
+            max-width: 750px;
+            width: 100%;
         }
         
         .cta-button:hover {
@@ -442,20 +444,22 @@
             </table>
             
             <!-- 모바일용 카드형 레이아웃 -->
-            <div class="mobile-membership-card">
-                <h4>파일럿 창립 멤버</h4>
-                <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
-                <p><span>할인율:</span> <span class="discount">약 70% 할인</span></p>
-                <p><span>최종 가격:</span> <span class="price">₩239,000</span></p>
-                <p><span>모집 인원:</span> <span>선착순 20명</span></p>
-            </div>
-            
-            <div class="mobile-membership-card">
-                <h4>얼리버드 멤버</h4>
-                <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
-                <p><span>할인율:</span> <span class="discount">약 60% 할인</span></p>
-                <p><span>최종 가격:</span> <span class="price">₩319,000</span></p>
-                <p><span>모집 인원:</span> <span>추가 30명</span></p>
+            <div class="mobile-only">
+                <div class="mobile-membership-card">
+                    <h4>파일럿 창립 멤버</h4>
+                    <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
+                    <p><span>할인율:</span> <span class="discount">약 70% 할인</span></p>
+                    <p><span>최종 가격:</span> <span class="price">₩239,000</span></p>
+                    <p><span>모집 인원:</span> <span>선착순 20명</span></p>
+                </div>
+                
+                <div class="mobile-membership-card">
+                    <h4>얼리버드 멤버</h4>
+                    <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
+                    <p><span>할인율:</span> <span class="discount">약 60% 할인</span></p>
+                    <p><span>최종 가격:</span> <span class="price">₩319,000</span></p>
+                    <p><span>모집 인원:</span> <span>추가 30명</span></p>
+                </div>
             </div>
             
             <div class="bonus-box">
