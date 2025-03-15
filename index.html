@@ -25,12 +25,13 @@
             background-color: #121212;
             color: var(--light-text);
             line-height: 1.6;
+            margin: 0;
         }
         
         .container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px 40px;
         }
         
         header {
@@ -41,6 +42,12 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
+        }
+        
+        .header-content {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         header h1 {
@@ -102,6 +109,14 @@
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        .card:first-of-type {
+            margin-top: 0;
+        }
+        
+        .card:last-of-type {
+            margin-bottom: 40px;
         }
         
         .card h2:first-child {
@@ -220,7 +235,7 @@
         
         .cta-section {
             text-align: center;
-            margin: 50px 0;
+            margin: 50px 0 30px;
         }
         
         .bonus-box {
@@ -239,6 +254,13 @@
             border-top: 1px solid #333;
             margin-top: 30px;
             width: 100%;
+            background-color: #1a1a1a;
+        }
+        
+        .footer-content {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         @media (max-width: 768px) {
@@ -255,17 +277,26 @@
             }
             
             .container {
-                padding: 15px;
-                max-width: 100%;
+                padding: 0 15px 30px;
+            }
+            
+            .header-content, .footer-content {
+                padding: 0 15px;
             }
             
             .card {
-                padding: 20px 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .alert-banner {
+                padding: 15px 20px;
+                margin-bottom: 20px;
             }
             
             header {
-                padding: 30px 15px;
-                width: 100%;
+                padding: 30px 0;
+                margin-bottom: 20px;
             }
             
             header h1 {
@@ -342,25 +373,25 @@
                 font-weight: bold;
             }
             
-            @media (max-width: 768px) {
-                .membership-table {
-                    display: none;
-                }
-                
-                .mobile-membership-card {
-                    display: block;
-                }
+            .mobile-membership-card {
+                display: block;
+            }
+            
+            .membership-table {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="header-content">
             <h1>[SAIZ] AI 자동화 커뮤니티</h1>
             <p>Self-Actualized AI Zone : 논문 프로젝트</p>
-        </header>
-        
+        </div>
+    </header>
+    
+    <div class="container">
         <div class="alert-banner">
             <strong>📢 중요 안내:</strong> 파일럿 창립 멤버 & 얼리버드 모집 일정이 <span class="highlight underline">3월 31일(월) 오전 10시</span>로 변경되었습니다.
         </div>
@@ -475,10 +506,12 @@
             <h2>3월 31일(월), 기회를 놓치지 마세요!</h2>
             <a href="https://tally.so/r/3EMWb2" class="cta-button">사전 대기 신청 하기</a>
         </div>
-        
-        <footer>
-            <p>© 2024 SAIZ. 모든 콘텐츠 및 라이센스 소유권은 OROT에게 있습니다.</p>
-        </footer>
     </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 SAIZ. 모든 콘텐츠 및 라이센스 소유권은 OROT에게 있습니다.</p>
+        </div>
+    </footer>
 </body>
 </html>
