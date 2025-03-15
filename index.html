@@ -89,7 +89,7 @@
         .card {
             background-color: #323232;
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px 25px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 750px;
@@ -106,7 +106,7 @@
         .membership-table th, .membership-table td {
             padding: 15px;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #444;
         }
         
         .membership-table th {
@@ -200,7 +200,7 @@
         .bonus-box {
             background: #323232;
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px 25px;
             margin: 20px 0;
             border-left: 5px solid var(--secondary-color);
         }
@@ -239,6 +239,43 @@
                 padding: 15px;
                 max-width: 95%;
             }
+            
+            /* 모바일에서 테이블 스타일 수정 */
+            .membership-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .membership-table tbody {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .membership-table tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 15px;
+                border-bottom: 1px solid #444;
+                padding-bottom: 15px;
+            }
+            
+            .membership-table td, .membership-table th {
+                text-align: center;
+                padding: 8px 5px;
+                border-bottom: none;
+                width: 100%;
+            }
+            
+            .membership-table th {
+                background-color: transparent;
+                font-size: 1rem;
+                padding-top: 0;
+            }
+            
+            .membership-table thead {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -275,14 +312,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="membership-row">
                         <td><strong>파일럿 창립 멤버</strong></td>
                         <td><span class="original-price">₩799,000</span></td>
                         <td><span class="discount">약 70% 할인</span></td>
                         <td><span class="price">₩239,000</span></td>
                         <td>선착순 20명</td>
                     </tr>
-                    <tr>
+                    <tr class="membership-row">
                         <td><strong>얼리버드 멤버</strong></td>
                         <td><span class="original-price">₩799,000</span></td>
                         <td><span class="discount">약 60% 할인</span></td>
