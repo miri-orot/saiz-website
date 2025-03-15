@@ -40,7 +40,7 @@
             color: var(--light-text);
             padding: 40px 0;
             text-align: center;
-            margin: 0 0 30px 0;
+            margin: 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
             position: relative;
@@ -69,11 +69,9 @@
             background-color: #323232;
             border-left: 5px solid #ed93a2;
             padding: 20px 30px;
-            margin-bottom: 30px;
+            margin: 30px auto;
             border-radius: 8px;
             max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         h1 {
@@ -83,7 +81,7 @@
         
         h2 {
             font-size: 1.8rem;
-            margin: 20px 0 15px; /* 상단 여백 줄임 */
+            margin: 20px 0 15px;
             color: var(--primary-color);
         }
         
@@ -125,7 +123,7 @@
         }
         
         .card h2:first-child {
-            margin-top: 0; /* 카드 첫 h2 여백 제거 */
+            margin-top: 0;
         }
         
         .card p {
@@ -136,10 +134,15 @@
             margin-bottom: 0;
         }
         
+        /* 데스크톱용 테이블 스타일 */
+        .membership-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
         .membership-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
         }
         
         .membership-table th, .membership-table td {
@@ -150,6 +153,34 @@
         
         .membership-table th {
             background-color: #333;
+            font-weight: bold;
+        }
+        
+        /* 모바일용 카드 스타일 */
+        .mobile-cards {
+            display: none;
+        }
+        
+        .mobile-card {
+            border: 1px solid #444;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        
+        .mobile-card h4 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .mobile-card p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .mobile-card p span:first-child {
             font-weight: bold;
         }
         
@@ -196,21 +227,29 @@
         }
         
         .timeline-item {
-            display: flex;
             margin-bottom: 25px;
-            align-items: flex-start; /* 세로 상단 정렬 */
         }
         
         .timeline-date {
-            flex: 0 0 200px; /* 날짜 영역 늘림 */
             font-weight: bold;
             color: var(--primary-color);
-            white-space: nowrap; /* 줄바꿈 방지 */
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         .timeline-content {
-            flex: 1;
-            margin-left: 30px; /* 더 오른쪽으로 밀기 */
+            padding-left: 20px;
+        }
+        
+        .timeline-time {
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content-item {
+            margin-bottom: 10px;
         }
         
         .timeline-content strong {
@@ -250,7 +289,6 @@
             border-radius: 12px;
             padding: 25px 30px;
             margin: 20px 0;
-            border-left: 5px solid var(--secondary-color);
         }
         
         footer {
@@ -298,12 +336,11 @@
             
             .alert-banner {
                 padding: 15px 20px;
-                margin-bottom: 20px;
+                margin: 20px auto;
             }
             
             header {
                 padding: 30px 0;
-                margin-bottom: 20px;
             }
             
             header h1 {
@@ -315,77 +352,31 @@
                 font-size: 1.1rem;
             }
             
-            /* 타임라인 수정 - 모바일에서도 한 줄로 표시 */
-            .timeline-item {
-                flex-direction: row;
-                margin-bottom: 20px;
-                align-items: flex-start; /* 상단 정렬 유지 */
+            /* 모바일 환경에서 테이블 숨기고 카드 표시 */
+            .membership-table-wrapper {
+                display: none;
             }
             
+            .mobile-cards {
+                display: block;
+            }
+            
+            /* 타임라인 수정 */
             .timeline-date {
-                flex: 0 0 auto;
-                margin-right: 15px;
+                margin-bottom: 8px;
+            }
+            
+            .timeline-time {
+                width: 80px;
                 font-size: 0.9rem;
-                white-space: nowrap;
             }
             
             .timeline-content {
-                flex: 1;
-                margin-left: 10px;
+                padding-left: 15px;
             }
             
-            .timeline-content strong {
-                font-size: 1rem;
-            }
-            
-            .timeline-content p {
-                font-size: 0.9rem;
-                margin: 5px 0;
-            }
-            
-            /* 멤버십 테이블 모바일 최적화 */
-            .membership-table {
-                width: 100%;
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .membership-row {
-                display: flex;
-                flex-direction: column;
-            }
-            
-            /* 모바일 테이블 카드형 변환 */
-            .mobile-membership-card {
-                border: 1px solid #444;
-                border-radius: 8px;
-                margin-bottom: 15px;
-                padding: 15px;
-                display: none;
-            }
-            
-            .mobile-membership-card h4 {
-                text-align: center;
-                margin-bottom: 10px;
-                font-size: 1.2rem;
-            }
-            
-            .mobile-membership-card p {
-                margin: 8px 0;
-                display: flex;
-                justify-content: space-between;
-            }
-            
-            .mobile-membership-card p span:first-child {
-                font-weight: bold;
-            }
-            
-            .mobile-membership-card {
-                display: block;
-            }
-            
-            .membership-table {
-                display: none;
+            .timeline-content-item {
+                margin-bottom: 8px;
             }
         }
     </style>
@@ -410,13 +401,12 @@
             <p>일정이 변경된 만큼, 파일럿 창립 멤버 & 얼리버드 멤버만을 위한 특별 혜택도 더욱 강화할 예정입니다.</p>
         </div>
         
-        <!-- 금액 안내 섹션 -->
         <div class="card">
             <h2>💡 연간 회원권 금액 안내</h2>
             <p>사전 대기 신청하신 분들께 <strong class="underline">가장 먼저 특별 할인가</strong>를 제공합니다.</p>
             
             <!-- 데스크톱용 테이블 -->
-            <div class="desktop-only">
+            <div class="membership-table-wrapper">
                 <table class="membership-table">
                     <thead>
                         <tr>
@@ -447,8 +437,8 @@
             </div>
             
             <!-- 모바일용 카드형 레이아웃 -->
-            <div class="mobile-only">
-                <div class="mobile-membership-card">
+            <div class="mobile-cards">
+                <div class="mobile-card">
                     <h4>파일럿 창립 멤버</h4>
                     <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
                     <p><span>할인율:</span> <span class="discount">약 70% 할인</span></p>
@@ -456,7 +446,7 @@
                     <p><span>모집 인원:</span> <span>선착순 20명</span></p>
                 </div>
                 
-                <div class="mobile-membership-card">
+                <div class="mobile-card">
                     <h4>얼리버드 멤버</h4>
                     <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
                     <p><span>할인율:</span> <span class="discount">약 60% 할인</span></p>
@@ -490,23 +480,23 @@
         </div>
         
         <div class="card">
-            <h2>가입 신청 & 결제 일정</h2>
+            <h2>가입 신청 & 결제 일정   |   3월 31일 월요일</h2>
             
             <div class="timeline" style="margin-top: 15px; margin-bottom: 15px;">
                 <div class="timeline-item">
-                    <div class="timeline-date">🚨 3월 31일(월) 오전 10시</div>
                     <div class="timeline-content">
-                        <strong>파일럿 창립 멤버 결제 오픈</strong>
-                        <p>오후 5시 혹은 선착순 20명 마감 후 자동 종료</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">🚨 3월 31일(월) 오후 6시</div>
-                    <div class="timeline-content">
-                        <strong>얼리버드 멤버 결제 오픈</strong>
-                        <p>파일럿 모집 마감 후 추가 얼리버드 멤버 30명 모집</p>
-                        <p>4월 1일 오후 10시 모집 마감</p>
+                        <div class="timeline-content-item">
+                            <span class="timeline-time">오전 10시</span>
+                            <span>파일럿 창립 멤버 결제 오픈</span>
+                        </div>
+                        <p style="padding-left: 100px;">오후 5시 혹은 선착순 20명 마감 후 자동 종료</p>
+                        
+                        <div class="timeline-content-item">
+                            <span class="timeline-time">오후 6시</span>
+                            <span>얼리버드 멤버 결제 오픈</span>
+                        </div>
+                        <p style="padding-left: 100px;">파일럿 모집 마감 후 추가 얼리버드 멤버 30명 모집</p>
+                        <p style="padding-left: 100px;">4월 1일 오후 10시 모집 마감</p>
                     </div>
                 </div>
             </div>
