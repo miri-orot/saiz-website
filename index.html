@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -40,14 +41,9 @@
             border-radius: 12px;
             margin-bottom: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        header h1 {
-            margin-bottom: 5px;
-        }
-        
-        header p {
-            margin-top: 0;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .alert-banner {
@@ -72,6 +68,12 @@
             color: var(--primary-color);
         }
         
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: var(--light-text);
+        }
+        
         .highlight {
             color: var(--accent-color);
             font-weight: bold;
@@ -86,6 +88,14 @@
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        .card p {
+            margin-bottom: 15px;
+        }
+        
+        .card p:last-child {
+            margin-bottom: 0;
         }
         
         .membership-table {
@@ -212,79 +222,87 @@
                 font-size: 1.5rem;
             }
             
-            .timeline-item {
-                flex-direction: column;
-                margin-bottom: 35px;
-            }
-            
-            .timeline-date {
-                margin-bottom: 8px;
-                margin-right: 0;
-                font-size: 1.1rem;
-            }
-            
-            .timeline-content {
-                padding-left: 10px;
-            }
-            
-            .timeline-content strong {
-                font-size: 1.1rem;
-                display: block;
-                margin-bottom: 5px;
-            }
-            
-            .membership-table th, .membership-table td {
-                padding: 10px 5px;
-                font-size: 0.9rem;
+            h3 {
+                font-size: 1.2rem;
             }
             
             .container {
                 padding: 15px;
-                max-width: 95%;
+                max-width: 100%;
             }
             
-            /* 모바일에서 테이블 스타일 수정 */
+            .card {
+                padding: 20px 15px;
+            }
+            
+            /* 타임라인 수정 */
+            .timeline-item {
+                flex-direction: column;
+                margin-bottom: 25px;
+            }
+            
+            .timeline-date {
+                margin-bottom: 10px;
+                margin-right: 0;
+                flex: none;
+            }
+            
+            .timeline-content {
+                padding-left: 0;
+            }
+            
+            /* 멤버십 테이블 모바일 최적화 */
             .membership-table {
+                width: 100%;
                 display: block;
                 overflow-x: auto;
             }
             
-            .membership-table tbody {
+            .membership-row {
                 display: flex;
                 flex-direction: column;
-                width: 100%;
             }
             
-            .membership-table tr {
-                display: flex;
-                flex-direction: column;
+            /* 모바일 테이블 카드형 변환 */
+            .mobile-membership-card {
+                border: 1px solid #444;
+                border-radius: 8px;
                 margin-bottom: 15px;
-                border-bottom: 1px solid #444;
-                padding-bottom: 15px;
-            }
-            
-            .membership-table td, .membership-table th {
-                text-align: center;
-                padding: 8px 5px;
-                border-bottom: none;
-                width: 100%;
-            }
-            
-            .membership-table th {
-                background-color: transparent;
-                font-size: 1rem;
-                padding-top: 0;
-            }
-            
-            .membership-table thead {
+                padding: 15px;
                 display: none;
+            }
+            
+            .mobile-membership-card h4 {
+                text-align: center;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .mobile-membership-card p {
+                margin: 8px 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .mobile-membership-card p span:first-child {
+                font-weight: bold;
+            }
+            
+            @media (max-width: 768px) {
+                .membership-table {
+                    display: none;
+                }
+                
+                .mobile-membership-card {
+                    display: block;
+                }
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header style="max-width: 750px; margin: 0 auto 30px auto;">
+        <header>
             <h1>[SAIZ] AI 자동화 커뮤니티</h1>
             <p>Self-Actualized AI Zone : 논문 프로젝트</p>
         </header>
@@ -304,6 +322,7 @@
             <h2>💡 연간 회원권 금액 안내</h2>
             <p>사전 대기 신청하신 분들께 <strong>가장 먼저 특별 할인가</strong>를 제공합니다.</p>
             
+            <!-- 데스크톱용 테이블 -->
             <table class="membership-table">
                 <thead>
                     <tr>
@@ -315,14 +334,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="membership-row">
+                    <tr>
                         <td><strong>파일럿 창립 멤버</strong></td>
                         <td><span class="original-price">₩799,000</span></td>
                         <td><span class="discount">약 70% 할인</span></td>
                         <td><span class="price">₩239,000</span></td>
                         <td>선착순 20명</td>
                     </tr>
-                    <tr class="membership-row">
+                    <tr>
                         <td><strong>얼리버드 멤버</strong></td>
                         <td><span class="original-price">₩799,000</span></td>
                         <td><span class="discount">약 60% 할인</span></td>
@@ -331,6 +350,23 @@
                     </tr>
                 </tbody>
             </table>
+            
+            <!-- 모바일용 카드형 레이아웃 -->
+            <div class="mobile-membership-card">
+                <h4>파일럿 창립 멤버</h4>
+                <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
+                <p><span>할인율:</span> <span class="discount">약 70% 할인</span></p>
+                <p><span>최종 가격:</span> <span class="price">₩239,000</span></p>
+                <p><span>모집 인원:</span> <span>선착순 20명</span></p>
+            </div>
+            
+            <div class="mobile-membership-card">
+                <h4>얼리버드 멤버</h4>
+                <p><span>정가:</span> <span class="original-price">₩799,000</span></p>
+                <p><span>할인율:</span> <span class="discount">약 60% 할인</span></p>
+                <p><span>최종 가격:</span> <span class="price">₩319,000</span></p>
+                <p><span>모집 인원:</span> <span>추가 30명</span></p>
+            </div>
             
             <div class="bonus-box">
                 <h3>추가 혜택 안내</h3>
@@ -344,7 +380,7 @@
         </div>
         
         <div class="card">
-            <h2>파일럿 창립 멤버만을 위한 추가 혜택</h2>
+            <h2 style="margin-top: 0;">파일럿 창립 멤버만을 위한 추가 혜택</h2>
             <p>파일럿 창립 멤버에게는 단순한 할인 혜택뿐만 아니라, <strong>강력한 지원 혜택</strong>도 함께 제공합니다!</p>
             
             <h3>제공될 추가 혜택 목록(예정)</h3>
@@ -387,6 +423,7 @@
         </div>
         
         <footer>
+            <!-- 푸터 내용 -->
         </footer>
     </div>
 </body>
